@@ -85,7 +85,7 @@ public:
 #endif
     }
 
-    void learn()const {
+    void learn() const override {
         cout << "Я учусь на дневном отделении" << endl;
     }
 
@@ -267,11 +267,30 @@ public:
 };
 
 
+class A1 {
+
+public:
+
+    void f() { cout << " Я класс А1"<< endl; }
+
+};
+
+class B1 :virtual public  A1 {};
+class C1 : virtual public A1 {};
+
+class D1 : public B1, public C1 {};
 
 
 int main(){
-
     setlocale(LC_ALL, "Rus");
+
+    D1 d;
+
+    d.f();
+
+    //A1* a1 = &d;
+
+    return 0;
 
     ////A a1;
     //B* b1 = new B{};
