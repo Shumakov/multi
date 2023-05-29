@@ -275,7 +275,7 @@ public:
 
 };
 
-class B1 :virtual public  A1 {};
+class B1 : virtual public  A1 {};
 class C1 : virtual public A1 {};
 
 class D1 : public B1, public C1 {};
